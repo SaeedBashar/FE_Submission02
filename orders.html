@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page | Orders</title>
+    <style>
+        body {
+            margin: 0;
+            background: #D8D8D8;
+            font-family: sans-serif;
+
+        }
+
+        ul.left-side {
+            position: fixed;
+            width: 25%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border-right: 2px solid #979797;
+            list-style-type: none;
+            overflow: auto;
+        }
+
+        ul.left-side li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .right {
+            margin-left: 25%;
+            padding: 1px 16px;
+        }
+
+        img {
+            width: 90px;
+            display: block;
+            margin: auto;
+            padding-top: 15px;
+        }
+        .top-part ul {
+            list-style-type: none;
+            padding: 5px;
+        }
+
+        .top-part li {
+            float: left;
+        }
+
+        .top-part li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .top-part input {
+            background: #ddd8d8;
+            border: 1px solid;
+        }
+
+        .bottom-part {
+            border: 1px solid;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            color: #605959;
+        }
+        .pagination span, .pagination a {
+            color: black;
+            float: left;
+            padding: 4px 8px;
+            text-decoration: none;
+            transition: background-color .3s;
+        }
+
+        .forward:hover, .backward:hover {
+            background-color: rgb(167, 208, 250);
+        }
+    </style>
+</head>
+<body>
+    <ul class="left-side">
+        <li><img src="./imgs/Freddys_Logo.svg" alt=""></li>
+        <li><a href="./dashboard.html">Dashboard</a></li>
+        <li><a href="./orders.html">Orders</a></li>
+        <li><a href="./login.html">Logout</a></li>
+    </ul>
+      
+    <div class="right">
+        <div class="top-part">
+            <ul>
+                <li>Orders</li>
+                <li style="float:right">&#128270;<input type="text"></li>
+            </ul>
+        </div>
+        <div class="bottom-part">
+            <table>
+                <tr>
+                  <th>Product Name</th>
+                  <th>Date</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                </tr>
+                <tr>
+                  <td>Product One</td>
+                  <td>23/07/2012</td>
+                  <td>$100</td>
+                  <td>processing</td>
+                </tr>
+                
+              </table>
+        </div>
+        <div class="pagination">
+            <a class="forward" href="#">&laquo;</a>
+            <span >Page</span> 
+            <span >1</span>
+            <span >of</span>
+            <span >2</span>
+            <a class="backward" href="#">&raquo;</a>
+            
+        </div>
+    </div>
+      
+</body>
+</html>
