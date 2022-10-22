@@ -1,3 +1,6 @@
+td:first-child{
+    width: 60%;
+}
 
 .overview div {
     display: inline-block;

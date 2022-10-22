@@ -52,7 +52,7 @@ form {
     border: 1px solid #979797;
 }
 
-input[type=submit]{
+input[type=button]{
     margin: 35px 5px;
     width: 96%;
     padding: 5px;
@@ -60,6 +60,7 @@ input[type=submit]{
     color: #605959;
     border: 1px solid #979797;
     font-size: 20px;
+    cursor: pointer;
 }
 
 img{
