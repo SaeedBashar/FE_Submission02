@@ -1,0 +1,7 @@
+
+.overview div {
+    display: inline-block;
+    width: 32%;
+    height: 70px;
+    border: 1px solid;
+}

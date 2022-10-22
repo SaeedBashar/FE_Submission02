@@ -1,0 +1,12 @@
+
+.pagination span, .pagination a {
+    color: black;
+    float: left;
+    padding: 4px 8px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.forward:hover, .backward:hover {
+    background-color: rgb(167, 208, 250);
+}
