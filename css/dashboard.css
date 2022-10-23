@@ -2,9 +2,33 @@ td:first-child{
     width: 60%;
 }
 
+.overview {
+    padding: 5px;
+}
+
 .overview div {
     display: inline-block;
-    width: 32%;
+    width: 31%;
     height: 70px;
     border: 1px solid;
+    padding: 5px;
+}
+
+@media screen and (max-width: 930px) {
+    .overview div {
+        width: 30%;
+        height: auto;
+        margin-top: 5px;
+    }
+
+    td, th {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .overview div {
+        display: block;
+        width: 100%
+    }
 }
