@@ -18,13 +18,23 @@ function signIn() {
         return res.json()
     })
     .then( data =>{
-        localStorage.setItem('accessToken', data.access_token);
-        localStorage.setItem('refreshToken', data.refresh_token);
-        window.location.assign('./dashboard.html')
+        if(!('msg' in data)){
+            localStorage.setItem('accessToken', data.access_token);
+            localStorage.setItem('refreshToken', data.refresh_token);
+            window.location.assign('./dashboard.html')
+        }else{
+            getEl('modalText').innerHTML = data.msg;
+            getEl('cusModal').style.display = 'block';
+        }
+        console.log(data)
     })
     .catch(err=>console.log(err))
 }
 
 function getEl(arg){
     return document.getElementById(arg);
+}
+
+function closeModal() {
+    getEl('cusModal').style.display = "none";
 }

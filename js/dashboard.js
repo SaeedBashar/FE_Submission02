@@ -1,3 +1,5 @@
+
+if(localStorage.getItem('accessToken') == null) window.location.assign('./login.html')
 let bestSellers;
 let weekSales; 
 let yearSales;
@@ -17,7 +19,11 @@ let request = new Request(uri, {
 });
 
 fetch(request)
-.then(res=>res.json())
+.then(res=>{
+    if(res.ok)
+        return res.json()
+    throw new Error('Unexpected Error')
+})
 .then(data=>{
     if(!('msg' in data)){
         const dashboard = data.dashboard;
@@ -56,8 +62,9 @@ fetch(request)
 
         fetch(request)
         .then(res=>{
-            console.log(res)
-            return res.json()
+            if(res.ok)
+                return res.json()
+            throw new Error('Unexpected Error')
         })
         .then(data=>{
             console.log('Token expired')
@@ -65,9 +72,11 @@ fetch(request)
             localStorage.setItem('accessToken', data.access_token);
             window.location.reload();
         })
+        .catch(err=>window.location.assign('./login.html'))
     }
     
 })
+.catch(err=>window.location.assign('./login.html'))
 
 function constructChart(arg, xaxis_label){
 
@@ -139,4 +148,11 @@ function renderChart(el){
         document.getElementById('chartTitle').innerText = 'Revenue (last 7 days)'
         constructChart(weekSales, week_x_label);
     }
+}
+
+function logout(){
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+
+    window.location.assign('./login.html');
 }

@@ -13,43 +13,33 @@
         <li><img src="./imgs/Freddys_Logo.svg" alt=""></li>
         <li><a href="./dashboard.html">Dashboard</a></li>
         <li><a href="./orders.html">Orders</a></li>
-        <li><a href="./login.html">Logout</a></li>
+        <li><a style="cursor: pointer" onclick="logout()">Logout</a></li>
     </ul>
       
     <div class="right">
         <div class="top-part">
             <ul>
                 <li>Orders</li>
-                <li style="float:right">&#128270;<input type="text"></li>
+                <li style="float:right">
+                    <span style="font-size: 20px">&#128270;</span>
+                    <input onkeyup="searchOrder(this.value)" id="searchInput" type="text">
+                </li>
             </ul>
         </div>
         <div class="bottom-part">
-            <table>
-                <tr>
-                  <th>Product Name</th>
-                  <th>Date</th>
-                  <th>Price</th>
-                  <th>Status</th>
-                </tr>
-                <tr>
-                  <td>Product One</td>
-                  <td>23/07/2012</td>
-                  <td>$100</td>
-                  <td>processing</td>
-                </tr>
+            <table id="orders">
                 
               </table>
         </div>
         <div class="pagination">
-            <a class="forward" href="#">&laquo;</a>
+            <a onclick="changeTablePage(-1)" class="forward">&laquo;</a>
             <span >Page</span> 
-            <span >1</span>
+            <span id="currentPage">1</span>
             <span >of</span>
-            <span >2</span>
-            <a class="backward" href="#">&raquo;</a>
-            
+            <span >3</span>
+            <a onclick="changeTablePage(1)" class="backward">&raquo;</a>
         </div>
     </div>
-      
+      <script src="./js/orders.js"></script>
 </body>
 </html>

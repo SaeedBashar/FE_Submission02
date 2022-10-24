@@ -1,4 +1,8 @@
 
+td:first-child{
+    width: 55%;
+}
+
 .pagination span, .pagination a {
     color: black;
     float: left;
@@ -9,4 +13,11 @@
 
 .forward:hover, .backward:hover {
     background-color: rgb(167, 208, 250);
+    cursor: pointer;
+}
+
+#searchInput {
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 5px;
 }
